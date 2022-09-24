@@ -1,26 +1,17 @@
 import './assets/css/app.css';
 
+
+import HomePage from 'pages/HomePage';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Details from 'pages/Detail';
 function App() {
   return (
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.js</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <div className="App">
+      <Router>
+      <Route exact path="/" component={HomePage} ></Route>
+      <Route path="/categories/:idc" component={Details} ></Route>
+      </Router>
+    </div>
   );
 }
 
